@@ -1,5 +1,5 @@
 import * as React from "react"
-import NavBar from "./components/navBar.js"
+import NavBar from "./components/nav_bar.js"
 import "../styles/global.css"
 
 const IndexPage = () => {

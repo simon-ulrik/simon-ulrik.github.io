@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import NavBar from "../components/navBar.js"
+import NavBar from "../components/nav_bar.js"
 
 const Projects = () => {
   return (

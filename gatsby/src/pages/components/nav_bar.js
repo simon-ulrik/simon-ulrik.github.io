@@ -25,7 +25,7 @@ export default class NavBar extends Component {
         let listItems = []
 
         links.forEach((link, i) => {
-            if (link == curren_location) {
+            if (link === curren_location) {
                 listItems.push(<li key={i} className="nav_link menu"><h1>{titles[i]}</h1></li>)
             } else {
                 listItems.push(<li key={i} className="nav_link menu"><Link to={link}>{titles[i]}</Link></li>)
@@ -61,11 +61,11 @@ export default class NavBar extends Component {
                             </span>
                         </Link>
                     </div>
-                    <div id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
+                    <container id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
                         <span className="material-icons">
                             {this.state.toggle === "open" ? "close" : this.toggleBtnType()}
                         </span>
-                    </div>
+                    </container>
                 </div>
                 <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
                     <ul id="nav_links">
