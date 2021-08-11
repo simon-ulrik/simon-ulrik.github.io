@@ -1,16 +1,16 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import NavBar from "../components/navBar.js"
+import NavBar from "./components/navBar.js"
 
-const Projects = () => {
+const About = () => {
   return (
     <>
     <NavBar backLink="/"></NavBar>
     <main>
-        <h1>Projects</h1>
+        <h1>About</h1>
     </main>
     </>
   )
 }
 
-export default Projects
+export default About

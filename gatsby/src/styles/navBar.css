@@ -15,17 +15,22 @@
     justify-content: space-evenly;
 }
 
-#nav_content {
-    overflow: hidden;
-    height: 0px;
-}
 
 #back_btn.open {
     display: none;
 }
 
+#nav_content {
+    overflow: hidden;
+    height: 0px;
+}
+
 #nav_content.open {
     overflow: visible;
+}
+
+#nav_content.menu {
+    text-align: center;
 }
 
 #nav_content.menu.closed {
@@ -84,4 +89,18 @@
 @keyframes close_ani_info {
     from {height: 100vh;}
     to {height: 0px;}
+}
+
+.nav_link a {
+    font-size: 2em;
+    color: black;
+}
+
+.nav_link h1 {
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.nav_link.menu {
+    margin-top: 1.5em;
 }

@@ -17,8 +17,22 @@ export default class NavBar extends Component {
         });
     }
 
-    currenLocation() {
-        return window.location.pathname
+    navLinks() {
+        const curren_location = window.location.pathname
+        const links = ["/projects", "/about", "/contact"]
+        const titles = ["Projects", "About", "Contact"]
+
+        let listItems = []
+
+        links.forEach((link, i) => {
+            if (link == curren_location) {
+                listItems.push(<li key={i} className="nav_link menu"><h1>{titles[i]}</h1></li>)
+            } else {
+                listItems.push(<li key={i} className="nav_link menu"><Link to={link}>{titles[i]}</Link></li>)
+            }
+        })
+
+        return listItems
     }
 
     toggleBtnType() {
@@ -41,9 +55,11 @@ export default class NavBar extends Component {
             <nav id="nav_bar">
                 <div id="nav_btns" className={this.state.toggle}>
                     <div id="back_btn" className={this.state.toggle}>
-                        <span className="material-icons">
-                            arrow_back
-                        </span>
+                        <Link to={this.props.backLink}>
+                            <span className="material-icons">
+                                arrow_back
+                            </span>
+                        </Link>
                     </div>
                     <div id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
                         <span className="material-icons">
@@ -53,10 +69,7 @@ export default class NavBar extends Component {
                 </div>
                 <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
                     <ul id="nav_links">
-                        <li><h1>{this.currenLocation()}</h1></li>
-                        <li className="nav_link"><h1>Projects</h1></li>
-                        <li className="nav_link"><h1>About me</h1></li>
-                        <li className="nav_link"><h1>Contact</h1></li>
+                        {this.navLinks()}
                     </ul>
                     {this.infoContent()}
                 </div>
