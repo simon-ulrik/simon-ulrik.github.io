@@ -54,18 +54,18 @@ export default class NavBar extends Component {
         return (
             <nav id="nav_bar">
                 <div id="nav_btns" className={this.state.toggle}>
-                    <div id="back_btn" className={this.state.toggle}>
+                    <button id="back_btn" className={this.state.toggle}>
                         <Link to={this.props.backLink}>
                             <span className="material-icons">
                                 arrow_back
                             </span>
                         </Link>
-                    </div>
-                    <container id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
+                    </button>
+                    <button id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
                         <span className="material-icons">
                             {this.state.toggle === "open" ? "close" : this.toggleBtnType()}
                         </span>
-                    </container>
+                    </button>
                 </div>
                 <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
                     <ul id="nav_links">
