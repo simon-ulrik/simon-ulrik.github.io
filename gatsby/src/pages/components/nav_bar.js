@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "gatsby"
-import "../../styles/navBar.css"
+import "../../styles/nav_bar.css"
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -68,7 +68,7 @@ export default class NavBar extends Component {
                     </button>
                 </div>
                 <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
-                    <ul id="nav_links">
+                    <ul className="nav_links">
                         {this.navLinks()}
                     </ul>
                     {this.infoContent()}

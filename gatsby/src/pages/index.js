@@ -1,20 +1,45 @@
-import * as React from "react"
-import NavBar from "./components/nav_bar.js"
+import React, { Component } from 'react'
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import "../styles/global.css"
+import "../styles/index_page.css"
 
-const IndexPage = () => {
-  return (
-    <>
-      <NavBar></NavBar>
-      <div>
-       <title>Simon's Portfolio</title>
-        <h1>Hello!</h1>
-        <h2>My Name Is Simon.</h2>
-        <p>This site is a work in progress right now,</p>
-        <p>check out my instagram instead: <a href="https://www.instagram.com/simons.pictures/">@simons.pictures</a></p>
-      </div>
-    </>
-  )
+export default class IndexPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    navLinks() {
+      const links = ["/projects", "/about", "/contact"]
+      const titles = ["Projects", "About", "Contact"]
+      let listItems = []
+    
+      links.forEach((link, i) => {
+        listItems.push(<li key={i} className="nav_link"><Link to={link}>{titles[i]}</Link></li>)
+      })
+    
+      return listItems
+    }
+
+    render() {
+        return (
+          <div id="index_page">
+            <div className="content_middle">
+              <div id="logo_container">
+                <StaticImage
+                  src="../images/logo.svg"
+                  alt="Simon's Pictures"
+                  placeholder="none"
+                  layout="fullWidth"
+                />
+              </div>
+            </div>
+            <ul className="nav_links">
+              {this.navLinks()}
+            </ul>
+          </div>
+        )
+    }
 }
 
-export default IndexPage

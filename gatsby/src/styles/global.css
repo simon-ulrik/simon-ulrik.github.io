@@ -49,3 +49,17 @@ button {
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
+
+.nav_links {
+    text-align: center;
+}
+
+.nav_link a {
+    font-size: 2em;
+    color: black;
+}
+
+.nav_link h1 {
+    font-weight: normal;
+    text-decoration: line-through;
+}
