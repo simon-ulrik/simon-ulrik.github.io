@@ -28,14 +28,15 @@ export default class IndexPage extends Component {
             <div className="content_middle">
               <div id="logo_container">
                 <StaticImage
-                  src="../images/logo.svg"
+                  src="../images/logo_white.svg"
                   alt="Simon's Pictures"
                   placeholder="none"
                   layout="fullWidth"
+                  id="logo"
                 />
               </div>
             </div>
-            <ul className="nav_links">
+            <ul className="nav_links index">
               {this.navLinks()}
             </ul>
           </div>
