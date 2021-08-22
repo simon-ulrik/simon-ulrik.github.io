@@ -32,7 +32,7 @@ export default class NavBar extends Component {
             }
         })
 
-        return listItems
+        return !!this.props.info ? <></> : <ul className={"nav_links"}> {listItems} </ul>
     }
 
     toggleBtnType() {
@@ -67,10 +67,9 @@ export default class NavBar extends Component {
                         </span>
                     </button>
                 </div>
+
                 <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
-                    <ul className="nav_links">
-                        {this.navLinks()}
-                    </ul>
+                    {this.navLinks()}
                     {this.infoContent()}
                 </div>
             </nav>

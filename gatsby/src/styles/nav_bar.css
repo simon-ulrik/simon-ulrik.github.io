@@ -1,14 +1,17 @@
 #nav_bar {
     background-color: salmon;
     width: 100%;
-    left: 25vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 #nav_btns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 3.5% 5%;
+    height: 8vh;
+    padding: 0px 5%;
 }
 
 #nav_btns.open {
@@ -24,7 +27,7 @@
     height: 0px;
 }
 
-#nav_content.open {
+#nav_content.open #info_content {
     overflow: visible;
 }
 
@@ -41,13 +44,13 @@
 
 #nav_content.info.closed {
     animation-name: close_ani_info;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 }
 
 #nav_content.info.open {
-    height: 100vh;
+    height: 92vh;
     animation-name: open_ani_info;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 }
 
 #toggle_menu {
@@ -78,11 +81,11 @@
 
 @keyframes open_ani_info {
     from {height: 0px;}
-    to {height: 100vh;}
+    to {height: 92vh;}
 }
 
 @keyframes close_ani_info {
-    from {height: 100vh;}
+    from {height: 92vh;}
     to {height: 0px;}
 }
 

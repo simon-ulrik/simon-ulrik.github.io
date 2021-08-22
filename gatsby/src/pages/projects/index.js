@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
     <NavBar backLink="/"></NavBar>
-    <main>
+    <main className="site_content">
         <h1>Projects</h1>
     </main>
     </>

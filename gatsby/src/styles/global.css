@@ -50,6 +50,10 @@ button {
     font-feature-settings: 'liga';
 }
 
+.site_content {
+    margin-top: 8vh;
+}
+
 .nav_links {
     text-align: center;
 }
