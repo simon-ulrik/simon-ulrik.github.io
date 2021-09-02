@@ -1,0 +1,29 @@
+.grid_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pic_grid {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+@media (max-width: 600px) {
+    .pic_grid {
+        max-width: 400px;
+    }
+}
+
+.grid_item {
+    width: 50vw;
+    height: 50vw;
+    background-position: center;
+    background-size: cover;
+    max-height: 200px;
+    max-width: 200px;
+}

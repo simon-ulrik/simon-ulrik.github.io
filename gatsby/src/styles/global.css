@@ -52,6 +52,10 @@ button {
 
 .site_content {
     margin-top: 8vh;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
 }
 
 .nav_links {
@@ -66,4 +70,9 @@ button {
 .nav_link h1 {
     font-weight: normal;
     text-decoration: line-through;
+}
+
+.main_page_title {
+    text-align: center;
+    margin: 5% 0px 5% 0px;
 }
