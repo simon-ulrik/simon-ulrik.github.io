@@ -4,6 +4,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 9999;
 }
 
 #nav_btns {
@@ -27,30 +28,24 @@
     height: 0px;
 }
 
-#nav_content.open #info_content {
-    overflow: visible;
+#info_title {
+    text-align: center;
 }
 
-#nav_content.menu.closed {
-    animation-name: close_ani_menu;
+#info_content {
+    padding: 1em 1.5em;
+}
+
+#nav_content.closed {
+    animation-name: close_ani_nav;
     animation-duration: 0.5s;
 }
 
-#nav_content.menu.open {
-    height: 30vh;
-    animation-name: open_ani_menu;
-    animation-duration: 0.5s;
-}
-
-#nav_content.info.closed {
-    animation-name: close_ani_info;
-    animation-duration: 1s;
-}
-
-#nav_content.info.open {
+#nav_content.open {
     height: 92vh;
-    animation-name: open_ani_info;
-    animation-duration: 1s;
+    animation-name: open_ani_nav;
+    animation-duration: 0.5s;
+    overflow: scroll;
 }
 
 #toggle_menu {
@@ -69,22 +64,12 @@
     display: block;
 }
 
-@keyframes open_ani_menu {
-    from {height: 0px;}
-    to {height: 30vh;}
-}
-
-@keyframes close_ani_menu {
-    from {height: 30vh;}
-    to {height: 0px;}
-}
-
-@keyframes open_ani_info {
+@keyframes open_ani_nav {
     from {height: 0px;}
     to {height: 92vh;}
 }
 
-@keyframes close_ani_info {
+@keyframes close_ani_nav {
     from {height: 92vh;}
     to {height: 0px;}
 }

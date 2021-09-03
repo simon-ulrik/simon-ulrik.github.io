@@ -42,9 +42,11 @@ export default class NavBar extends Component {
     infoContent() {
         if (!!this.props.info) {
             return (
-                <div id="info_content">
-                    <h1>{this.props.info.title}</h1>
-                    <p>{this.props.info.content}</p>
+                <div>
+                    <h1 id="info_title">{this.props.info.title}</h1>
+                    <div id="info_content">
+                        <p>{this.props.info.content}</p>
+                    </div>
                 </div>
             )
         }
