@@ -6,6 +6,11 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Space Mono';
+    list-style-type: none;
+}
+
+button a {
+    text-decoration: none;
 }
 
 p {

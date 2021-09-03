@@ -17,10 +17,10 @@ export default class NavBar extends Component {
         });
     }
 
-    navLinks() {
+    navLinks(className) {
         const curren_location = window.location.pathname
-        const links = ["/projects", "/about", "/contact"]
-        const titles = ["Projects", "About", "Contact"]
+        const links = ["/", "/projects", "/about", "/contact"]
+        const titles = ["Home", "Projects", "About", "Contact"]
 
         let listItems = []
 
@@ -32,7 +32,7 @@ export default class NavBar extends Component {
             }
         })
 
-        return !!this.props.info ? <></> : <ul className={"nav_links"}> {listItems} </ul>
+        return !!this.props.info && !className ? <></> : <ul className={`nav_links ${className}`}> {listItems} </ul>
     }
 
     toggleBtnType() {
@@ -57,12 +57,13 @@ export default class NavBar extends Component {
             <nav id="nav_bar">
                 <div id="nav_btns" className={this.state.toggle}>
                     <button id="back_btn" className={this.state.toggle}>
-                        <Link to={this.props.backLink}>
-                            <span className="material-icons">
-                                arrow_back
-                            </span>
+                        <Link to={this.props.backLink} className="material-icons">
+                            arrow_back
                         </Link>
                     </button>
+
+                    {this.navLinks("desktop")}
+
                     <button id="toggle_btn" className={this.toggleBtnType()} onClick={this.toggle}>
                         <span className="material-icons">
                             {this.state.toggle === "open" ? "close" : this.toggleBtnType()}

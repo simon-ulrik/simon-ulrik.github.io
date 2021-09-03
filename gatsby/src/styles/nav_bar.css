@@ -1,5 +1,5 @@
 #nav_bar {
-    background-color: salmon;
+    background-color: white;
     width: 100%;
     position: absolute;
     top: 0px;
@@ -13,6 +13,14 @@
     justify-content: space-between;
     height: 8vh;
     padding: 0px 5%;
+    min-height: 50px;
+    max-height: 85px;
+}
+
+#nav_btns button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #nav_btns.open {
@@ -72,6 +80,39 @@
 @keyframes close_ani_nav {
     from {height: 92vh;}
     to {height: 0px;}
+}
+
+.nav_links.desktop {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 800px) {
+    .nav_links.desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 800px) {
+    #nav_btns button {
+        display: none;
+    }
+
+    #nav_btns {
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .nav_links {
+        justify-content: center;
+    }
+
+    .nav_links.desktop .nav_link {
+        margin: 0px 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .nav_link.menu {
