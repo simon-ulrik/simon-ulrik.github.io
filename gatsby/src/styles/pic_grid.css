@@ -19,6 +19,12 @@
     }
 }
 
+@media (min-width: 800px) {
+    .grid_container {
+        margin-top:15vh;
+    }
+}
+
 .grid_item {
     width: 50vw;
     height: 50vw;

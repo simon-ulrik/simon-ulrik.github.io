@@ -13,6 +13,9 @@ export default class ProjectPage extends Component {
         return (
             <>
                 <NavBar backLink="/projects" info={this.props.info}/>
+                <main className="site_content">
+                    {this.props.children}
+                </main>
             </>
         )
     }
