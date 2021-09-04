@@ -22,6 +22,12 @@
     }
 }
 
+@media (max-width: 900px) {
+    #logo_container {
+        max-width: 300px;
+    }
+}
+
 .content_middle {
     width: 100%;
     display: flex;

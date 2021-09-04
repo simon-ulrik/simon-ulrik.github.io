@@ -17,6 +17,13 @@
     max-height: 85px;
 }
 
+#nav_bar_spacer {
+    height: 8vh;
+    min-height: 50px;
+    max-height: 85px;
+    z-index: -9999;
+}
+
 #nav_btns button {
     display: flex;
     flex-direction: column;
@@ -87,13 +94,13 @@
     flex-direction: row;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .nav_links.desktop {
         display: none;
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
     #nav_btns button {
         display: none;
     }

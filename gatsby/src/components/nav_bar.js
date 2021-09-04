@@ -54,6 +54,7 @@ export default class NavBar extends Component {
 
     render() {
         return (
+            <>
             <nav id="nav_bar">
                 <div id="nav_btns" className={this.state.toggle}>
                     <button id="back_btn" className={this.state.toggle}>
@@ -76,6 +77,8 @@ export default class NavBar extends Component {
                     {this.infoContent()}
                 </div>
             </nav>
+            <div id="nav_bar_spacer"></div>
+            </>
         )
     }
 }
