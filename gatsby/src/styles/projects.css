@@ -5,16 +5,32 @@
 
 #info_container {
     height: 100%;
-    width: 30%;
+    width: 35%;
+    overflow-y: scroll;
 }
 
 #info_container.hidden {
     display: none;
 }
 
+@media (max-width: 800px) {
+    #info_container.desktop {
+        display: none;
+    }
+}
+
+#info_content.desktop {
+    margin: 1em 10%; 
+}
+
+#info_title.desktop {
+    margin-top: 1em;
+    font-size: 3em;
+}
+
 #book_container {
     height: 100%;
-    width: 70%;
+    width: 65%;
     display: flex;
     flex-direction: row;
 }

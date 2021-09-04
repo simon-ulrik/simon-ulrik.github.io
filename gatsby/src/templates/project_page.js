@@ -7,33 +7,27 @@ export default class ProjectPage extends Component {
     constructor(props) {
         super(props);
         // props.info: {title: "kjh", content: "kjhu"}
-        // type: "", "book", "slide"
-        this.state = {spread_i: 0, spread_length: 13};
+        // props.type: "book", slides 
+        this.state = {spread_i: 0};
 
         this.bookForward = this.bookForward.bind(this)
         this.bookBackward = this.bookBackward.bind(this)
     }
 
     book() {
-        
-        let imgs = this.props.children
         let book = []
-        let spread = []
-        let spread_i = 0
+        this.props.children.forEach((spread, i)=> {
+            let hidden = this.state.spread_i === i ? "" : "hidden"
 
-        imgs.forEach((img, i)=> {
-            let hidden = this.state.spread_i === spread_i ? "" : "hidden"
-
-            if (i === 0 || i === imgs.length - 1) {
-                book.push(<div key={spread_i} className={`spread ${hidden}`}>{this.page((i === 0), img, "", "single")}</div>)
-                spread_i += 1
+            if (Array.isArray(spread)) {
+                book.push(
+                    <div key={i} className={`spread ${hidden}`}>
+                        {this.page(false, spread[0], 0,)}
+                        {this.page(true, spread[1], 1,)}
+                    </div>
+                )
             } else {
-                spread.push(this.page(!(i % 2), img, spread.length, spread_i, ""))
-                if (spread.length === 2) {
-                    book.push(<div key={spread_i} className={`spread ${hidden}`}>{spread}</div>)
-                    spread = []
-                    spread_i += 1
-                }
+                book.push(<div key={i} className={`spread ${hidden}`}>{this.page((i === 0), spread, "", "single")}</div>)
             }
         })
 
@@ -51,29 +45,31 @@ export default class ProjectPage extends Component {
                 className={`page forward ${className}`}
                 role="button"
                 onClick={this.bookForward}
-                onKeyDown={this.bookForward}
+                onKeyDown={(e) => this.bookForward(e)}
+                tabIndex="0"
                 key={key}
                 >{img}</div>
             : <div
-            className={`page forward ${className}`}
+            className={`page backward ${className}`}
                 role="button"
                 onClick={this.bookBackward}
-                onKeyDown={this.bookBackward}
+                onKeyDown={(e) => this.bookBackward(e)}
+                tabIndex="0"
                 key={key}
                 >{img}</div>
         )
     }
 
-    bookForward() {
-        if (this.state.spread_i < this.state.spread_length) {
+    bookForward(e) {
+        if (this.state.spread_i < this.props.children.length && (e.key === "Enter" || e.type === "click")) {
             this.setState({
                 spread_i: this.state.spread_i + 1
             });
         }
     }
 
-    bookBackward() {
-        if (this.state.spread_i > 0) {
+    bookBackward(e) {
+        if (this.state.spread_i > 0 && (e.key === "Enter" || e.type === "click")) {
             this.setState({
                 spread_i: this.state.spread_i - 1
             });
@@ -81,11 +77,12 @@ export default class ProjectPage extends Component {
     }
 
     infoContainer() {
-        let hidden = this.state.spread_i > 0 || this.state.spread_i === this.state.spread_length ? "hidden" : ""
-
         return (
-            <div id="info_container" className={hidden}>
-                <h1>{this.props.info.title} {this.state.spread_i}</h1>
+            <div id="info_container" className={`desktop`}>
+                <h1 id="info_title" className="desktop">{this.props.info.title}</h1>
+                <div id="info_content" className="desktop">
+                    <p>{this.props.info.content}</p>
+                </div>
             </div>
         )
     }
@@ -96,7 +93,7 @@ export default class ProjectPage extends Component {
                 <NavBar backLink="/projects" info={this.props.info}/>
                 <main className="site_content project">
                     {this.infoContainer()}
-                    {this.book()}
+                    {this.props.type === "book" ? this.book() : <></>}
                 </main>
             </>
         )
