@@ -58,9 +58,9 @@ button {
 .site_content {
     margin-top: 8vh;
     height: 92vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
 }
 
 .nav_links {

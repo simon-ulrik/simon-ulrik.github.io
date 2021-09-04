@@ -28,8 +28,6 @@
 .grid_item {
     width: 50vw;
     height: 50vw;
-    background-position: center;
-    background-size: cover;
     max-height: 200px;
     max-width: 200px;
 }

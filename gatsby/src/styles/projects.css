@@ -1,0 +1,39 @@
+.site_content.project {
+    flex-direction: row;
+    justify-content: center;
+}
+
+#info_container {
+    height: 100%;
+    width: 30%;
+}
+
+#info_container.hidden {
+    display: none;
+}
+
+#book_container {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.spread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page {
+    height: 100%;
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spread.hidden {
+    display: none;
+}
