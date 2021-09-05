@@ -62,6 +62,12 @@ button {
     flex-direction: column;
 }
 
+@media (max-height: 600px) {
+    .site_content {
+        height: 86vh;
+    }
+}
+
 .nav_links {
     text-align: center;
 }

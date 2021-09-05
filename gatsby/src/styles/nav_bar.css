@@ -13,15 +13,23 @@
     justify-content: space-between;
     height: 8vh;
     padding: 0px 5%;
-    min-height: 50px;
     max-height: 85px;
 }
 
 #nav_bar_spacer {
     height: 8vh;
-    min-height: 50px;
     max-height: 85px;
     z-index: -9999;
+}
+
+@media (max-height: 600px) {
+    #nav_btns {
+        height: 14vh;
+    }
+
+    #nav_bar_spacer {
+        height: 14vh;
+    }
 }
 
 #nav_btns button {
@@ -61,6 +69,22 @@
     animation-name: open_ani_nav;
     animation-duration: 0.5s;
     overflow: scroll;
+}
+
+@media (max-height: 600px) {
+    #nav_content.open {
+        height: 86vh;
+    }
+
+    @keyframes open_ani_nav {
+        from {height: 0px;}
+        to {height: 86vh;}
+    }
+    
+    @keyframes close_ani_nav {
+        from {height: 86vh;}
+        to {height: 0px;}
+    }
 }
 
 #toggle_menu {
