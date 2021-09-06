@@ -71,13 +71,12 @@ export default class NavBar extends Component {
                         </span>
                     </button>
                 </div>
-
-                <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
-                    {this.navLinks()}
-                    {this.infoContent()}
-                </div>
             </nav>
-            <div id="nav_bar_spacer"></div>
+            
+            <div id="nav_content" className={`${this.toggleBtnType()} ${this.state.toggle}`}>
+                {this.navLinks()}
+                {this.infoContent()}
+            </div>
             </>
         )
     }

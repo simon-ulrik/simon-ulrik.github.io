@@ -1,10 +1,8 @@
 #nav_bar {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 9999;
 }
 
 #nav_btns {
@@ -14,22 +12,6 @@
     height: 8vh;
     padding: 0px 5%;
     max-height: 85px;
-}
-
-#nav_bar_spacer {
-    height: 8vh;
-    max-height: 85px;
-    z-index: -9999;
-}
-
-@media (max-height: 600px) {
-    #nav_btns {
-        height: 14vh;
-    }
-
-    #nav_bar_spacer {
-        height: 14vh;
-    }
 }
 
 #nav_btns button {
@@ -49,6 +31,12 @@
 #nav_content {
     overflow: hidden;
     height: 0px;
+    background-color: white;
+    position: absolute;
+    top: 8vh;
+    left: 0px;
+    z-index: 9999;
+    width: 100vw;
 }
 
 #info_title {
@@ -69,22 +57,6 @@
     animation-name: open_ani_nav;
     animation-duration: 0.5s;
     overflow: scroll;
-}
-
-@media (max-height: 600px) {
-    #nav_content.open {
-        height: 86vh;
-    }
-
-    @keyframes open_ani_nav {
-        from {height: 0px;}
-        to {height: 86vh;}
-    }
-    
-    @keyframes close_ani_nav {
-        from {height: 86vh;}
-        to {height: 0px;}
-    }
 }
 
 #toggle_menu {
@@ -111,6 +83,52 @@
 @keyframes close_ani_nav {
     from {height: 92vh;}
     to {height: 0px;}
+}
+
+@media screen and (orientation:landscape) and (max-width: 900px) {
+    #nav_bar {
+        height: 100vh;
+        width: 8vw;
+        flex-direction: column-reverse;
+    }
+    
+    #nav_btns {
+        flex-direction: column;
+        width: 8vw;
+        padding: 30% 0px;
+        max-height: 99999px;
+        flex: 1;
+    }
+
+    #nav_content {
+        top: 0px;
+        left: 8vw;
+        width: 0px;
+    }
+
+    #nav_content.open {
+        width: 92vw;
+        height: 100vh;
+    }
+
+    #nav_content.closed {
+        width: 0px;
+        height: 100vh;
+    }
+
+    #nav_btns button {
+        flex-direction: row;
+    }
+
+    @keyframes open_ani_nav {
+        from {width: 0px;}
+        to {width: 92vw;}
+    }
+    
+    @keyframes close_ani_nav {
+        from {width: 92vw;}
+        to {width: 0px;}
+    }
 }
 
 .nav_links.desktop {

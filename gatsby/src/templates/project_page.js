@@ -89,13 +89,13 @@ export default class ProjectPage extends Component {
 
     render() {
         return (
-            <>
+            <div id="site_wrapper">
                 <NavBar backLink="/projects" info={this.props.info}/>
                 <main className="site_content project">
                     {this.infoContainer()}
                     {this.props.type === "book" ? this.book() : <></>}
                 </main>
-            </>
+            </div>
         )
     }
 }

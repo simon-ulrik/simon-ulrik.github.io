@@ -3,12 +3,12 @@ import NavBar from "../components/nav_bar.js"
 
 const About = () => {
   return (
-    <>
-    <NavBar backLink="/"/>
-    <main>
-        <h1>About</h1>
-    </main>
-    </>
+    <div id="site_wrapper">
+      <NavBar backLink="/"/>
+      <main>
+          <h1>About</h1>
+      </main>
+    </div>
   )
 }
 
