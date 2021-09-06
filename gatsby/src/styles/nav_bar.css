@@ -89,7 +89,6 @@
     #nav_bar {
         height: 100vh;
         width: 8vw;
-        flex-direction: column-reverse;
     }
     
     #nav_btns {
@@ -128,6 +127,10 @@
     @keyframes close_ani_nav {
         from {width: 92vw;}
         to {width: 0px;}
+    }
+
+    #info_title {
+        padding-top: 0.5em;
     }
 }
 
