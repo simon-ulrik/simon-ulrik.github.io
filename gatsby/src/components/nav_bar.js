@@ -7,7 +7,7 @@ export default class NavBar extends Component {
         // props.info: {title: "kjh", content: "kjhu"}
         // props.backLink: 'String'
         super(props);
-        this.state = {toggle: ""};
+        this.state = {toggle: "", curren_location: "/"};
         this.toggle = this.toggle.bind(this);
     }
 
@@ -17,15 +17,20 @@ export default class NavBar extends Component {
         });
     }
 
+    componentDidMount() {
+        this.setState({
+            curren_location: window.location.pathname
+        });
+    }
+
     navLinks(className) {
-        const curren_location = window.location.pathname
         const links = ["/", "/projects", "/about", "/contact"]
         const titles = ["Home", "Projects", "About", "Contact"]
 
         let listItems = []
 
         links.forEach((link, i) => {
-            if (link === curren_location) {
+            if (link === this.state.curren_location) {
                 listItems.push(<li key={i} className="nav_link menu"><h1>{titles[i]}</h1></li>)
             } else {
                 listItems.push(<li key={i} className="nav_link menu"><Link to={link}>{titles[i]}</Link></li>)
