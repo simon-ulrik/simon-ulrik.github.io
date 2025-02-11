@@ -1,12 +1,12 @@
 import * as React from "react"
-import Layout from "../components/Layout"
+import Layout from "../../components/Layout"
 
-export default function Home() {
+export default function Work() {
   return (
     <Layout>
       <section>
         <div>
-          <h1>Home!</h1>
+          <h1>work!</h1>
           <p>lorum ipsum</p>
         </div>
       </section>
