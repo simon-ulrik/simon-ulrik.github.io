@@ -1,7 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "simons.pictures-portfolio",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -16,10 +15,6 @@
     "gatsby": "^5.14.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
