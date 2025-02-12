@@ -10,7 +10,9 @@ export default function Layout({ children }) {
             { children }
         </div>
         <footer>
-            <p>footer!</p>
+            <p>Email: simon.ulrik.j@gmail.com</p>
+            <p>Phone: +46768882560</p>
+            <p>Instagram: <a href='https://www.instagram.com/simons.pictures/'>@simons.pictures</a></p>
         </footer>
     </div>
   )
