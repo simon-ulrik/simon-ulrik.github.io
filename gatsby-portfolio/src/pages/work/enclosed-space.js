@@ -23,7 +23,7 @@ export default function EnclosedSpace(props) {
     <Layout location={props.location}>
       <section>
         <div>
-          <h1>EnclosedSpace</h1>
+          <h1>Enclosed Space</h1>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/M_bo-rwfu5o?si=-Hcen-ooMRkNsheW" title="Enclosed Space Video" allowFullScreen></iframe>
           <div>
             <StaticImage height={200} src={"../../images/enclosed-space/enclosed-space_web_00.jpg"} alt="enclosed-space_web_00" />
