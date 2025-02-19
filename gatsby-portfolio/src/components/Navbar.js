@@ -11,7 +11,7 @@ export default function Navbar({location}) {
     ["Work", "/work"]
   ];
 
-  if (currentPath != "/") {
+  if (currentPath !== "/") {
     currentPath = currentPath.slice(0, -1); // "/about/" -> "/about"
   };
 
@@ -20,13 +20,13 @@ export default function Navbar({location}) {
     const pageName = pages[i][0]
     const path = pages[i][1]
 
-    if (path == currentPath) {
+    if (path === currentPath) {
       className = "selected"
     }
 
     const LINK = <Link
       className={className}
-      key={i}
+      key={"main-nav_"+i}
       to={path}>{pageName}</Link>;
     link_objects.push(LINK)
   };
