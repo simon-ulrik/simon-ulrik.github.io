@@ -8,6 +8,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  siteMetadata: {
+    title: 'Simon Johannessons photography portfolio'
+  },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
